@@ -24,7 +24,8 @@ exports.read = async (from, options = {}) => {
     }
     return records;
   } catch (e) {
-    throw e;
+    console.log(e);
+    return null;
   }
 };
 
@@ -36,7 +37,7 @@ exports.read = async (from, options = {}) => {
 exports.create = async (insertIn, data) => {
   try {
     const cmd = `php -r "echo password_hash('${data.pwd}', PASSWORD_BCRYPT);";`;
-    await exec(cmd, (e, s, se) => {
+    await exec(cmd, function(e, s, se) {
       data.pwd = s;
     });
     data.role = 1;
@@ -46,7 +47,8 @@ exports.create = async (insertIn, data) => {
     const IDs = await collection.insertMany(dataArray);
     return IDs;
   } catch (e) {
-    throw e;
+    console.log(e);
+    return null;
   }
 };
 
@@ -64,7 +66,8 @@ exports.update = async (insertIn, options, data) => {
     const result = await collection.updateMany(options, {$set: data});
     return result;
   } catch (e) {
-    throw e;
+    console.log(e);
+    return null;
   }
 };
 
@@ -81,6 +84,7 @@ exports.del = async (from, options) => {
     const result = await collection.deleteMany(options);
     return result;
   } catch (e) {
-    throw e;
+    console.log(e);
+    return null;
   }
 };

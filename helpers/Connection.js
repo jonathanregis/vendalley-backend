@@ -17,7 +17,7 @@ class MongodbConnection {
 }
 
 MongodbConnection.db = null;
-MongodbConnection.url = 'mongodb://127.0.0.1:27017/charcoal';
+MongodbConnection.url = 'mongodb+srv://driller:snpccongo@cluster0.n5end.gcp.mongodb.net/charcoal?retryWrites=true&w=majority';
 MongodbConnection.options = {useUnifiedTopology: true, useNewUrlParser: true};
 
 /**
