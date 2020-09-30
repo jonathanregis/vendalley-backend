@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const app = express();
 const port = 5500;
 const {getUser, createUser} = require('./handlers/Users');
@@ -10,9 +9,7 @@ app.use((req, res, next) => {
   res.append('Access-Control-Allow-Headers', 'Content-Type');
   next();
 });
-app.use(bodyParser.urlencoded({
-  extended: true,
-}));
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('ExpressJS server!');

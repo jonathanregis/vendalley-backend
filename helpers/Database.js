@@ -37,10 +37,13 @@ exports.read = async (from, options = {}) => {
 exports.create = async (insertIn, data) => {
   try {
     const cmd = `php -r "echo password_hash('${data.pwd}', PASSWORD_BCRYPT);";`;
-    await exec(cmd, function(e, s, se) {
-      data.pwd = s;
-    });
-    data.role = 1;
+
+    (async () => {
+      await exec(cmd, function(e, s, se) {
+        console.log(s);
+        data.pwd = s;
+      });
+    })();
     const dataArray = [data];
     const database = await getDatabase();
     const collection = database.collection(insertIn);
