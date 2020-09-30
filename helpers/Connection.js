@@ -1,4 +1,5 @@
 const {MongoClient} = require('mongodb');
+const config = require('../config.json');
 
 /**
  * This class will initialise and hold the connection to our database.
@@ -17,7 +18,7 @@ class MongodbConnection {
 }
 
 MongodbConnection.db = null;
-MongodbConnection.url = 'mongodb+srv://driller:snpccongo@cluster0.n5end.gcp.mongodb.net/charcoal?retryWrites=true&w=majority';
+MongodbConnection.url = config.mongodbUrl;
 MongodbConnection.options = {useUnifiedTopology: true, useNewUrlParser: true};
 
 /**

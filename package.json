@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "npm test",
-    "start": "node ./"
+    "start": "node ./",
+    "configure": "node makeconf.js",
+    "postinstall": "npm run-script configure && npm run-script generate-key '*'",
+    "generate-key": "node genKey.js"
   },
   "keywords": [
     "e-commerce",
@@ -16,7 +19,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "mongodb": "^3.6.2"
+    "mongodb": "^3.6.2",
+    "yargs": "^16.0.3"
   },
   "devDependencies": {
     "eslint": "^7.10.0",

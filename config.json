@@ -1,0 +1,49 @@
+{
+ "mongodbUrl": "'mongodb+srv://driller:snpccongo@cluster0.n5end.gcp.mongodb.net/charcoal?retryWrites=true&w=majority'",
+ "cors": {
+  "enabled": true,
+  "allowedOrigins": [
+   "*"
+  ]
+ },
+ "apiKeys": [
+  {
+   "key": "139fc6d3129ba3cee06fb72d",
+   "access": [
+    "*"
+   ]
+  },
+  {
+   "key": "d5afc342c96c4ff1e3801783",
+   "access": [
+    "users",
+    "products"
+   ]
+  },
+  {
+   "key": "58409868efefb45f7fcacf4a",
+   "access": [
+    "*"
+   ]
+  },
+  {
+   "key": "7b984792f5e8512a6aea2fa2",
+   "access": [
+    "*"
+   ],
+   "allowedIP": [
+    "192.168.41.112"
+   ]
+  },
+  {
+   "key": "54a5ca0707f1db7b9e11738b",
+   "access": [
+    "*"
+   ],
+   "allowedIP": [
+    "192.168.41.112",
+    "127.0.0.1"
+   ]
+  }
+ ]
+}
